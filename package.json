@@ -10,6 +10,7 @@
     "@sap-cloud-sdk/http-client": "^4.0.1",
     "@sap-cloud-sdk/util": "^4.0.1",
     "@sap/cds": "^8",
+    "@sap/cds-mtxs": "^2",
     "@sap/low-code-event-handler": "^1.2.5",
     "@sap/mdk-tools": "^1.12.1",
     "@sap/xsenv": ">=3.3.2 <3.3.3",
@@ -38,7 +39,8 @@
     "requires": {
       "[production]": {
         "db": "hana",
-        "auth": "xsuaa"
+        "auth": "xsuaa",
+        "multitenancy": true
       },
       "app-service": {
         "impl": "@sap/low-code-event-handler"
@@ -51,7 +53,8 @@
           "kind": "xsuaa"
         }
       }
-    }
+    },
+    "profile": "with-mtx-sidecar"
   },
   "lcap": true,
   "sapux": [
