@@ -62,8 +62,7 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.fe.templates": {},
-        "sap.f": {}
+        "sap.fe.templates": {}
       }
     },
     "contentDensities": {
@@ -95,28 +94,17 @@
       "css": []
     },
     "routing": {
-      "config": {
-        "flexibleColumnLayout": {
-          "defaultTwoColumnLayoutType": "TwoColumnsBeginExpanded",
-          "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
-        },
-        "routerClass": "sap.f.routing.Router"
-      },
+      "config": {},
       "routes": [
         {
           "pattern": ":?query:",
           "name": "RisksList",
-          "target": [
-            "RisksList"
-          ]
+          "target": "RisksList"
         },
         {
           "pattern": "Risks({key}):?query:",
           "name": "RisksObjectPage",
-          "target": [
-            "RisksList",
-            "RisksObjectPage"
-          ]
+          "target": "RisksObjectPage"
         }
       ],
       "targets": {
@@ -143,9 +131,7 @@
                 }
               }
             }
-          },
-          "controlAggregation": "beginColumnPages",
-          "contextPattern": ""
+          }
         },
         "RisksObjectPage": {
           "type": "Component",
@@ -156,17 +142,9 @@
               "editableHeaderContent": false,
               "contextPath": "/Risks"
             }
-          },
-          "controlAggregation": "midColumnPages",
-          "contextPattern": "/Risks({key})"
+          }
         }
       }
-    },
-    "rootView": {
-      "viewName": "sap.fe.templates.RootContainer.view.Fcl",
-      "type": "XML",
-      "async": true,
-      "id": "appRootView"
     }
   },
   "sap.fiori": {

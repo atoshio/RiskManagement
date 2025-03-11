@@ -1,7 +1,7 @@
 {
   "_version": "1.60.0",
   "sap.app": {
-    "id": "riskmanagement.risks",
+    "id": "riskmanagement.mitigations",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,11 +13,11 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
       "version": "1.16.5",
-      "toolsId": "96359398-01a6-42f3-995d-b3076a7d5dcc"
+      "toolsId": "d015673a-3570-4f3c-b0d2-d30b8f487880"
     },
     "dataSources": {
       "mainService": {
-        "uri": "service/RiskManagementService/",
+        "uri": "/service/RiskManagementService/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -27,10 +27,10 @@
     },
     "crossNavigation": {
       "inbounds": {
-        "riskmanagementrisks-display": {
-          "semanticObject": "riskmanagementrisks",
+        "riskmanagementmitigations-display": {
+          "semanticObject": "riskmanagementmitigations",
           "action": "display",
-          "title": "{{riskmanagementrisks-display.flpTitle}}",
+          "title": "{{riskmanagementmitigations-display.flpTitle}}",
           "signature": {
             "parameters": {},
             "additionalParameters": "allowed"
@@ -74,7 +74,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "riskmanagement.risks.i18n.i18n"
+          "bundleName": "riskmanagement.mitigations.i18n.i18n"
         }
       },
       "": {
@@ -105,33 +105,33 @@
       "routes": [
         {
           "pattern": ":?query:",
-          "name": "RisksList",
+          "name": "MitigationsList",
           "target": [
-            "RisksList"
+            "MitigationsList"
           ]
         },
         {
-          "pattern": "Risks({key}):?query:",
-          "name": "RisksObjectPage",
+          "pattern": "Mitigations({key}):?query:",
+          "name": "MitigationsObjectPage",
           "target": [
-            "RisksList",
-            "RisksObjectPage"
+            "MitigationsList",
+            "MitigationsObjectPage"
           ]
         }
       ],
       "targets": {
-        "RisksList": {
+        "MitigationsList": {
           "type": "Component",
-          "id": "RisksList",
+          "id": "MitigationsList",
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
-              "contextPath": "/Risks",
+              "contextPath": "/Mitigations",
               "variantManagement": "Page",
               "navigation": {
-                "Risks": {
+                "Mitigations": {
                   "detail": {
-                    "route": "RisksObjectPage"
+                    "route": "MitigationsObjectPage"
                   }
                 }
               },
@@ -147,18 +147,18 @@
           "controlAggregation": "beginColumnPages",
           "contextPattern": ""
         },
-        "RisksObjectPage": {
+        "MitigationsObjectPage": {
           "type": "Component",
-          "id": "RisksObjectPage",
+          "id": "MitigationsObjectPage",
           "name": "sap.fe.templates.ObjectPage",
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/Risks"
+              "contextPath": "/Mitigations"
             }
           },
           "controlAggregation": "midColumnPages",
-          "contextPattern": "/Risks({key})"
+          "contextPattern": "/Mitigations({key})"
         }
       }
     },
@@ -172,9 +172,5 @@
   "sap.fiori": {
     "registrationIds": [],
     "archeType": "transactional"
-  },
-  "sap.cloud": {
-    "public": true,
-    "service": "lcap.RiskManagement"
   }
 }
