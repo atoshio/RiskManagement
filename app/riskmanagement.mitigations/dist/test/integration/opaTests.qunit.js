@@ -1,0 +1,2 @@
+sap.ui.require(["sap/fe/test/JourneyRunner","riskmanagement/mitigations/test/integration/FirstJourney","riskmanagement/mitigations/test/integration/pages/MitigationsList","riskmanagement/mitigations/test/integration/pages/MitigationsObjectPage"],function(i,t,e,n){"use strict";var i=new i({launchUrl:sap.ui.require.toUrl("riskmanagement/mitigations")+"/index.html"});i.run({pages:{onTheMitigationsList:e,onTheMitigationsObjectPage:n}},t.run)});
+//# sourceMappingURL=opaTests.qunit.js.map

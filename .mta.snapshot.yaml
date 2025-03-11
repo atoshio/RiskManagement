@@ -27,6 +27,24 @@ build-parameters:
       commands:
         - npm install
 modules:
+  - name: RiskManagement-riskmanagement.mitigations
+    type: html5
+    path: app/riskmanagement.mitigations
+    build-parameters:
+      builder: custom
+      commands:
+        - rm -rf dist-zip dist
+        - npm install
+        - >-
+          npx -p @ui5/cli@^3.0.0 ui5 build --dest dist
+          --include-task=generateCachebusterInfo
+        - mkdir dist-zip
+        - >-
+          bash -c "cd dist && npx bestzip
+          ../dist-zip/riskmanagementmitigations.zip *"
+      _artifactName: riskmanagementmitigations.zip
+      supported-platforms: []
+      build-result: dist-zip
   - name: RiskManagement-riskmanagement.risks
     type: html5
     path: app/riskmanagement.risks
@@ -148,6 +166,10 @@ modules:
     build-parameters:
       build-result: resources
       requires:
+        - name: RiskManagement-riskmanagement.mitigations
+          artifacts:
+            - riskmanagementmitigations.zip
+          target-path: resources
         - name: RiskManagement-riskmanagement.risks
           artifacts:
             - riskmanagementrisks.zip
