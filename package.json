@@ -22,6 +22,7 @@
   "devDependencies": {
     "@cap-js/cds-types": "^0.9.0",
     "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^8",
     "@sap/dev-cap-tools": "^1.31.0"
   },
   "scripts": {
@@ -52,9 +53,21 @@
         "[production]": {
           "kind": "xsuaa"
         }
+      },
+      "BusinessPartnerA2X": {
+        "kind": "odata-v2",
+        "model": "srv/external/BusinessPartnerA2X",
+        "[production]": {
+          "credentials": {
+            "destination": "apihub_sandbox",
+            "path": "s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER"
+          }
+        },
+        "csrf": true,
+        "csrfInBatch": true
       }
     },
-    "profile": "with-mtx-sidecar"
+    "profile": "development"
   },
   "lcap": true,
   "sapux": [
